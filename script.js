@@ -10,3 +10,26 @@ modalSubmitButton.addEventListener('click', (event) => {
 })
 
 console.log(localStorage.getItem('nameInput'));
+
+const collectEntries = function() {
+    const entries = localStorage.getItem('entries')
+
+    if (!entries) {
+        return [];
+    } else {
+        return JSON.parse(entries);
+    }
+
+}
+
+const saveEntries = function(entries) {
+
+    localStorage.setItem('entries', JSON.stringify(entries));
+
+}
+
+const displayEntries = function() {
+
+    
+
+}
