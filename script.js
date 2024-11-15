@@ -1,35 +1,62 @@
 const modalNameInput = document.getElementById('name');
+const modalDateInput = document.getElementById('date');
+const modalCategoryInput = document.getElementById('category');
+const modalDescriptionInput = document.getElementById('description');
 const modalSubmitButton = document.getElementById('submitButton');
-
-console.log(modalNameInput.value);
+const sectionEl = document.getElementById('entryBody');
 
 modalSubmitButton.addEventListener('click', (event) => {
-    const value = modalNameInput.value;
-    localStorage.setItem('nameInput', modalNameInput.value);
-    console.log(value);
-})
 
-console.log(localStorage.getItem('nameInput'));
-
-const collectEntries = function() {
-    const entries = localStorage.getItem('entries')
-
-    if (!entries) {
-        return [];
+    let entries = [];
+    if (!localStorage.getItem('entries')) {
+        localStorage.setItem('entries', JSON.stringify([]))
     } else {
-        return JSON.parse(entries);
+        entries = JSON.parse(localStorage.getItem('entries'));
     }
 
-}
+    const entry = {
+        name: modalNameInput.value,
+        date: modalDateInput.value,
+        category: modalCategoryInput.value,
+        description: modalDescriptionInput.value
+    }
 
-const saveEntries = function(entries) {
-
+    entries.push(entry);
     localStorage.setItem('entries', JSON.stringify(entries));
 
-}
+
+})
 
 const displayEntries = function() {
 
+    const entriesList = JSON.parse(localStorage.getItem('entries'));
     
+    entriesList.forEach((entry) => { 
 
+        let entryDiv = document.createElement('div');
+        let nameDiv = document.createElement('div');
+        let dateDiv = document.createElement('div');
+        let categoryDiv = document.createElement('div');
+        let descriptionDiv = document.createElement('div');
+
+        nameDiv.textContent = entry.name;
+        dateDiv.textContent = entry.date;
+        categoryDiv.textContent = entry.category;
+        descriptionDiv.textContent = entry.description;
+
+        entryDiv.classList.add('entry');
+        nameDiv.classList.add('name');
+        dateDiv.classList.add('date');
+        categoryDiv.classList.add('category');
+        descriptionDiv.classList.add('description');
+
+        entryDiv.appendChild(nameDiv);
+        entryDiv.appendChild(dateDiv);
+        entryDiv.appendChild(categoryDiv);
+        entryDiv.appendChild(descriptionDiv);
+
+        sectionEl.appendChild(entryDiv);
+    });
 }
+
+displayEntries();
