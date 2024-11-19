@@ -20,6 +20,8 @@ modalSubmitButton.addEventListener('click', (event) => {
         category: modalCategoryInput.value,
         description: modalDescriptionInput.value
     }
+    
+    insertFn(entry.name,entry.date,entry.category,entry.description)
 
     if (modalCategoryInput.value === "Select Emotion") {
         return;
@@ -32,35 +34,30 @@ modalSubmitButton.addEventListener('click', (event) => {
 
 })
 
+function insertFn(name,date,category,description) {
+    const table = document.getElementById("tab").
+       getElementsByTagName('tbody')[0];
+       console.log(table)
+    const newRow = table.insertRow();
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2)
+    const cell4 = newRow.insertCell(3)
+    cell1.innerHTML = name;
+    cell2.innerHTML = date;
+    cell3.innerHTML = category;
+    cell4.innerHTML = description;
+
+    table.appendChild(newRow)
+}
 const displayEntries = function() {
 
     const entriesList = JSON.parse(localStorage.getItem('entries'));
     
     entriesList.forEach((entry) => { 
+        
+        insertFn(entry.name,entry.date,entry.category,entry.description)
 
-        let entryDiv = document.createElement('div');
-        let nameDiv = document.createElement('div');
-        let dateDiv = document.createElement('div');
-        let categoryDiv = document.createElement('div');
-        let descriptionDiv = document.createElement('div');
-
-        nameDiv.textContent = entry.name;
-        dateDiv.textContent = entry.date;
-        categoryDiv.textContent = entry.category;
-        descriptionDiv.textContent = entry.description;
-
-        entryDiv.classList.add('entry');
-        nameDiv.classList.add('name');
-        dateDiv.classList.add('date');
-        categoryDiv.classList.add('category');
-        descriptionDiv.classList.add('description');
-
-        entryDiv.appendChild(nameDiv);
-        entryDiv.appendChild(dateDiv);
-        entryDiv.appendChild(categoryDiv);
-        entryDiv.appendChild(descriptionDiv);
-
-        sectionEl.appendChild(entryDiv);
     });
 }
 
