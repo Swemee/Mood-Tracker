@@ -21,7 +21,12 @@ modalSubmitButton.addEventListener('click', (event) => {
         description: modalDescriptionInput.value
     }
 
-    entries.push(entry);
+    if (modalCategoryInput.value === "Select Emotion") {
+        return;
+    } else {
+        entries.push(entry);
+    }
+
     localStorage.setItem('entries', JSON.stringify(entries));
 
 
