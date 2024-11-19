@@ -17,6 +17,13 @@ header {
 body {
     font-size: 1.3rem;
 }
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+main table {
+    margin-top: 20px;
+}
 aside {
     justify-content: center;
     background-color: #9bbabd;
@@ -48,6 +55,9 @@ p {
 }
 form {
     background-color: #c4d5c4;
+}
+table {
+    width: 65%;
 }
 /*Font styles*/
 .dm-serif-text-regular {
