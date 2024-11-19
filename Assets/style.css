@@ -48,6 +48,7 @@ p {
 form {
     background-color: #c4d5c4;
 }
+/*Font styles*/
 .dm-serif-text-regular {
     font-family: "DM Serif Text", serif;
     font-weight: 400;
@@ -57,4 +58,16 @@ form {
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: italic;
+}
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+/*IDs*/
+#add-mood {
+    height: 100%;
+}
+#submitButton {
+    background-color: #51777c;
 }
