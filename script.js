@@ -4,6 +4,10 @@ const modalCategoryInput = document.getElementById('category');
 const modalDescriptionInput = document.getElementById('description');
 const modalSubmitButton = document.getElementById('submitButton');
 const sectionEl = document.getElementById('entryBody');
+const userGreeting = document.getElementById('greeting')
+const userName = localStorage.getItem('name')
+
+userGreeting.innerHTML = `Hello, ${userName}!`
 
 modalSubmitButton.addEventListener('click', (event) => {
 

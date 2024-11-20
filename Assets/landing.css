@@ -1,0 +1,56 @@
+/*Font styles*/
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: #c4d5c4;
+    border-color: #51777c;
+    border-width: 75px 0 75px 0;
+}
+header {
+    border-color: #9bbabd;
+    font-size: 3rem;
+    margin: 100px 0 50px 0;
+}
+div {
+    font-size: 1.3rem;
+    background-color: #9bbabd;
+    border-color: #51777c;
+    width: fit-content;
+    border-width: 10px;
+    border-radius: 25%;
+    padding: 25px 25px 0 25px;
+    margin-bottom: 205px;
+}
+div form button {
+    border-color: #51777c;  padding: 15px 32px;  
+    text-align: center; 
+    font-size: 16px;
+    cursor: pointer;  
+}  
+button:hover {  
+    opacity: 0.8;
+}
+footer {
+    border-color: #51777c;
+    border-width: 0 0 75px 0;
+}
+.dm-serif-text-regular {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.dm-serif-text-regular-italic {
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}

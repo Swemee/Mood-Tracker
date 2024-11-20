@@ -1,6 +1,8 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
 body {
     background-color: #c4d5c4;
-    font-family: 'Times New Roman', Times, serif;
 }
 header {
     font-size: 3.5rem;
@@ -16,6 +18,32 @@ header {
 }
 body {
     font-size: 1.3rem;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+main table {
+    margin-top: 20px;
+    border-color: #51777c;
+    border-width: 5px;
+}
+main table tr:nth-child(odd){
+    background-color: #D1BE9D;
+}
+main table tr:nth-child(even){
+    background-color: #d4d1cb;
+}
+main table th {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+main table th {
+    background-color: #9bbabd;
+}
+main table tbody tr td {
+    border-color:#51777c;
 }
 aside {
     justify-content: center;
@@ -49,6 +77,9 @@ p {
 form {
     background-color: #c4d5c4;
 }
+table {
+    width: 65%;
+}
 /*Font styles*/
 .dm-serif-text-regular {
     font-family: "DM Serif Text", serif;
@@ -67,7 +98,9 @@ form {
 }
 /*IDs*/
 #add-mood {
-    height: 100%;
+    height: 75%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 #submitButton {
     background-color: #51777c;
